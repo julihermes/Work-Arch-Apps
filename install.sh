@@ -14,7 +14,7 @@ main_stage=(
     fuse2
     code
     neovim
-    slack-desktop
+    slack-desktop-wayland
 )
 
 # Set some colors
