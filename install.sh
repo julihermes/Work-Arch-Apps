@@ -45,6 +45,12 @@ install_software() {
     else
         # No package found so installing
         echo -en "$CNT - Now installing $1 ."
+        if [[ $1 == "mongodb-compass" || $1 == "slack-desktop-wayland" ]]; then
+            sudo rm -f /usr/lib/debug/.build-id/f4/*
+            sudo rm -f /usr/lib/debug/.build-id/73/*
+            sudo rm -f /usr/lib/debug/.build-id/a2/*
+            sudo rm -f /usr/lib/debug/.build-id/5c/*
+        fi
         yay -S --noconfirm $1 &>> $INSTLOG &
         show_progress $!
         # Test to make sure package installed
@@ -112,7 +118,7 @@ done
 # Setup nodeJS
 echo -e "$CNT - Setup NodeJS..."
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-source ~/.bashrc
+source /usr/share/nvm/init-nvm.sh
 nvm install --lts
 
 # Setup docker
