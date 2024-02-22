@@ -12,7 +12,7 @@ main_stage=(
     postman-bin
     mongodb-compass
     fuse2
-    code
+    vscodium-bin
     neovim
     slack-desktop-wayland
 )
@@ -115,23 +115,9 @@ for SOFTWR in ${main_stage[@]}; do
     install_software $SOFTWR
 done
 
-# Setup nodeJS
-echo -e "$CNT - Setup NodeJS..."
-echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-source /usr/share/nvm/init-nvm.sh
-nvm install --lts
-
-# Setup docker
-echo -e "$CNT - Setup Docker..."
-sudo usermod -aG docker $USER
-
-# Setup neovim
-echo -e "$CNT - Setup Neovim..."
-git clone git@github.com:julihermes/Neovim-Config ~/.config/nvim
-
-# copy .gitcongif file
-echo -e "$CNT - Coping .gitconfig file..."
-sudo cp -f configs/.gitconfig ~/.gitconfig
+# Copy .desktop files
+echo -e "$CNT - Coping .desktop files..."
+cp -f configs/*.desktop ~/.local/share/applications/
 
 # Script is done
 echo -e "$CNT - Script had completed!
