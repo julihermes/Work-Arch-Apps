@@ -17,6 +17,7 @@ main_stage=(
     slack-desktop-wayland
     thunderbird
     birdtray
+    wl-clipboard
 )
 
 # Set some colors
