@@ -15,6 +15,8 @@ main_stage=(
     vscodium-bin
     neovim
     slack-desktop-wayland
+    thunderbird
+    birdtray
 )
 
 # Set some colors
