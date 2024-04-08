@@ -122,6 +122,8 @@ done
 echo -e "$CNT - Coping .desktop files..."
 cp -f configs/*.desktop ~/.local/share/applications/
 
+echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.config/zsh/configs.zsh
+
 # Script is done
 echo -e "$CNT - Script had completed!
 Please, restart the system."
