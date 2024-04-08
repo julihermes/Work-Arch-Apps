@@ -16,7 +16,7 @@ main_stage=(
     neovim
     slack-desktop-wayland
     thunderbird
-    birdtray
+    systray-x-minimal
     wl-clipboard
 )
 
